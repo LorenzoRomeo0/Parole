@@ -21,6 +21,13 @@ public class Parole {
 		Collections.sort(parole);
 		return parole;
 	}
+	public String getConvertedList() {
+		List<String> parole=getElenco();
+		String testo="";
+		for(int i=0; i<parole.size();i++)
+			testo+=parole.get(i)+"\n";
+		return testo;
+	}
 	
 	public void reset() {
 		parole=new ArrayList<String>();

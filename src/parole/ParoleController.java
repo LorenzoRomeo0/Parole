@@ -40,11 +40,7 @@ public class ParoleController {
     void doInsert(ActionEvent event) {
     	if(!txtParola.getText().isEmpty()) {
     		elenco.addParola(txtParola.getText());
-    		String testo="";
-    		ArrayList<String> lista=(ArrayList<String>)elenco.getElenco();
-    		for(int i=0; i<lista.size();i++)
-    			testo+=lista.get(i)+"\n";
-    		txtResult.setText(testo);
+    		txtResult.setText(elenco.getConvertedList());
     		txtParola.setText("");
     	}
     }
@@ -58,11 +54,7 @@ public class ParoleController {
     @FXML
     void doDelete(ActionEvent event) {
     	elenco.delete(txtParola.getText());
-    	String testo="";
-		ArrayList<String> lista=(ArrayList<String>)elenco.getElenco();
-		for(int i=0; i<lista.size();i++)
-			testo+=lista.get(i)+"\n";
-		txtResult.setText(testo);
+		txtResult.setText(elenco.getConvertedList());
 		txtParola.setText("");
     }
 
